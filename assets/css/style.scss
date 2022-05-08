@@ -1,10 +1,95 @@
 @charset "utf-8";
 
-@media screen and (max-width:768px){
+/////////////////////
+// 変数
+/////////////////////
+
+//フォント
+// 游ゴシック 
+$yugo:YakuHanJP, 游ゴシック, YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+
+// 色
+// ネイビー
+$nv:#0e192d;
+
+
+/////////////////////
+// ヘッダー
+/////////////////////
+.header{
+    // ヘッダー配置
+    &__items{
+        display: flex;
+        height: 70px;
+        align-items: center;
+    }
+
+    // ロゴ
+    &__logo{
+        display: block;
+        width: 110px;
+        margin: 0 35px;
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
+
+    // メニュー配置
+    &__menus{
+        display: flex;
+    }
+    &__menu{
+        &_main{
+            display: flex;
+
+        }
+    }
+
+    // メインメニュー
+    &__link{
+        display: block;
+        padding: 15px;
+        font-family: $yugo;
+        font-weight: 400;
+        font-size: 12px;
+        color: #0e192d;
+        position: relative;
+        
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left:50%;
+            width : 0%;
+            height: 2px;
+            background: $nv;
+            transition: 0.2s;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left:50%;
+            width : 0%;
+            height: 2px;
+            background: $nv;
+            transition: 0.2s;
+        }
+
+        &:hover{
+            &::before{
+                left:0;
+                width :50%;
+            }
+            &::after{
+                width :50%;
+            }
+        }
+    }
+
+    // 問合せリンク
 }
 
-// フォント
-// @font-face{
-//     font-family: ;
-//     src:url("");
-// }
+@media screen and (max-width:768px){
+}
