@@ -4,29 +4,49 @@
 // 変数
 /////////////////////
 
+body{
+    background: green;
+    height: 10000px;
+}
+
 //フォント
 // 游ゴシック 
 $yugo:YakuHanJP, 游ゴシック, YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+$en:YakuHanJP,EB Garamond,serif;
 
 // 色
 // ネイビー
 $nv:#0e192d;
+// 赤
+$rd:#99001C;
 
 
 /////////////////////
 // ヘッダー
 /////////////////////
 .header{
+    background: white;
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 100vh;
+
     // ヘッダー配置
     &__items{
         display: flex;
         height: 70px;
+        min-height: 100%;
         align-items: center;
+        justify-content: space-between;
+    }
+    &__item{
+        height: 100%;
     }
 
     // ロゴ
     &__logo{
-        display: block;
+        display: flex;
+        align-items: center;
         width: 110px;
         margin: 0 35px;
         img{
@@ -38,11 +58,33 @@ $nv:#0e192d;
     // メニュー配置
     &__menus{
         display: flex;
+        height: 100%;
     }
     &__menu{
+        // メインメニュー
         &_main{
             display: flex;
+            align-items: center;
+        }
 
+        // フォーム
+        &_form{
+            background: $rd;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            color: white;
+            font-size: 13px;
+            font-family: $yugo;
+            font-size: 13px;
+            transition: 0.2s;
+            width: 150px;
+            justify-content: center;
+
+            &:hover{
+                color: rgba(255,255,255,0.5);
+            }
         }
     }
 
@@ -88,8 +130,120 @@ $nv:#0e192d;
         }
     }
 
-    // 問合せリンク
+    // ハンバーガーメニュー
+    &__btn{
+        display: none;
+        position: relative;
+        width: 25px;
+        height: 20px;
+        margin-right: 20px;
+
+        // ボタンを押したとき
+        &_active{
+            .header__hum{
+                top: 50%;
+                &_top{
+                    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                }
+                &_mid{
+                    opacity: 0;
+                }
+                &_btm{
+                    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+                }
+            }
+        }
+    }
+    &__hum{
+        position: absolute;
+        left: 50%;
+        width: 25px;
+        height: 2px;
+        background: $nv;
+        transform: translateX(-50%) translateY(-50%);
+        transition: 0.2s;
+
+        &_top{
+            top: 0;
+        }
+        &_mid{
+            top: 50%;
+        }
+        &_btm{
+            top:100%;
+        }
+    }
 }
+
+// スマホメニュー
+.sp{
+    padding: 15px 30px 100px 30px;
+
+    &_loading{
+        opacity: 0;
+    }
+
+    &__link{
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    &__en{
+        font-family: $en;
+        font-weight: 500;
+        font-size: 31px;
+        color: $nv;
+        margin-bottom: 5px;
+    }
+
+    &__ja{
+        font-family: $yugo;
+        font-weight: 700;
+        font-size: 11px;
+        color: $rd;
+    }
+
+    &__form{
+        background: $rd;
+        font-family: $yugo;
+        font-weight: 500;
+        font-size: 13px;
+        color: white;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+}
+
+// スマホ表示 
+@media screen and (max-width:768px){
+    .header{
+        // ヘッダーの配置
+        &__item{
+            &_main{
+                display: none;
+            }
+        }
+
+        // ロゴ
+        &__logo{
+            margin: 0 15px;
+        }
+
+        // ハンバーガーメニュー
+        &__btn{
+            display: block;
+        }
+    }
+}
+
+
+
+
+
+
 
 @media screen and (max-width:768px){
 }
