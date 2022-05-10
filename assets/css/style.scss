@@ -5,7 +5,6 @@
 /////////////////////
 
 body{
-    background: green;
     height: 10000px;
 }
 
@@ -21,6 +20,19 @@ $nv:#0e192d;
 $rd:#99001C;
 
 
+
+/////////////////////
+// 共通パーツ
+///////////////////// 
+// ラッパー
+.wrapper{
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+
 /////////////////////
 // ヘッダー
 /////////////////////
@@ -30,6 +42,7 @@ $rd:#99001C;
     width: 100%;
     overflow-y: scroll;
     max-height: 100vh;
+    z-index: 10;
 
     // ヘッダー配置
     &__items{
@@ -241,9 +254,71 @@ $rd:#99001C;
 
 
 
+////////////////////
+// トップ
+//////////////////// 
+.top{
+    background-image: url("../img/01_top.jpg");
+    background-size: cover;
+    height: 700px;
 
+    &__wrapper{
+        max-width: 1000px;
+        height: 100%;
+        position: relative;
+    }
 
+    &__titles{
+        position: absolute;
+        top : 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        padding: 15px 30px;
+    }
 
+    &__title{
+        line-height: 1.5em;
+        font-family: $en;
+        font-weight: 700;
+        color: $nv;
+        color: white;
+        font-size: 60px;
+        text-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
 
-@media screen and (max-width:768px){
+    &__subtitle{
+        font-family: $en;
+        color: $rd;
+        margin-bottom: 20px;
+        text-shadow: 0 0 5px rgba(255,255,255,1);
+        font-size: 13px;
+        font-weight: 600;
+    }
 }
+
+// スマホ
+@media screen and (max-width:768px){
+    .top{
+        height: 600px;
+
+        &__titles{
+            top: 40%;
+        }
+
+        &__title{
+            font-size: 35px;
+        }
+
+        &__subtitle{
+            font-size: 15px;
+        }
+    }
+}
+
+
+
+
+
+
+
+

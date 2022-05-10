@@ -1,7 +1,12 @@
 @charset "UTF-8";
 body {
-  background: green;
   height: 10000px;
+}
+
+.wrapper {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .header {
@@ -10,6 +15,7 @@ body {
   width: 100%;
   overflow-y: scroll;
   max-height: 100vh;
+  z-index: 10;
 }
 
 .header__items {
@@ -231,6 +237,61 @@ body {
   }
   .header__btn {
     display: block;
+  }
+}
+
+.top {
+  background-image: url("../img/01_top.jpg");
+  background-size: cover;
+  height: 700px;
+}
+
+.top__wrapper {
+  max-width: 1000px;
+  height: 100%;
+  position: relative;
+}
+
+.top__titles {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 15px 30px;
+}
+
+.top__title {
+  line-height: 1.5em;
+  font-family: YakuHanJP, EB Garamond, serif;
+  font-weight: 700;
+  color: #0e192d;
+  color: white;
+  font-size: 60px;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.top__subtitle {
+  font-family: YakuHanJP, EB Garamond, serif;
+  color: #99001C;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    height: 600px;
+  }
+  .top__titles {
+    top: 40%;
+  }
+  .top__title {
+    font-size: 35px;
+  }
+  .top__subtitle {
+    font-size: 15px;
   }
 }
 /*# sourceMappingURL=style.css.map */
