@@ -1,23 +1,22 @@
 @charset "utf-8";
 
+body{
+    padding-bottom: 500px;
+}
+
 /////////////////////
 // 変数
 /////////////////////
-
-body{
-    height: 10000px;
-}
-
-//フォント
-// 游ゴシック 
-$yugo:YakuHanJP, 游ゴシック, YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
-$en:YakuHanJP,EB Garamond,serif;
 
 // 色
 // ネイビー
 $nv:#0e192d;
 // 赤
 $rd:#99001C;
+// 緑
+$gr:#82cbd1;
+// 青
+$bl:#F3F7FE;
 
 
 
@@ -27,8 +26,71 @@ $rd:#99001C;
 // ラッパー
 .wrapper{
     max-width: 1230px;
-    padding: 0 15px;
+    padding: 30px 15px;
     margin: 0 auto;
+}
+
+// セクションのタイトル
+.section-title{
+    display: flex;
+    align-items: center;
+
+    &__line{
+        background: #000;
+        width: 100px;
+        height: 2px;
+        margin-right: 10px;
+    }
+
+    &__main{
+        color: $nv;
+        font-size: 44px;
+        font-family: en-b;
+        margin-right: 10px;
+    }
+
+    &__sub{
+        color: $rd;
+        font-size: 16px;
+        font-family: ja-b;
+    }
+
+    &__text{
+        padding-left: 110px;
+        margin-top: 20px;
+        font-family: ja-l;
+        color: $nv;
+        font-size: 14px;
+        line-height: 26px;
+    }
+}
+@media screen and (max-width:768px){
+    .section-title{
+        flex-wrap: wrap;
+
+        &__line{
+            width: 30px;
+            height: 1px;
+            margin-right: 0;
+            transform: translateX(-15px);
+        }
+    
+        &__main{
+            font-size: 33px;
+            margin-bottom: 10px;
+        }
+    
+        &__sub{
+            font-size: 12px;
+            margin-left: 30px;
+        }
+    
+        &__text{
+            padding-left: 30px;
+            font-size: 11px;
+            line-height: 20px;
+        }
+    }
 }
 
 
@@ -88,8 +150,7 @@ $rd:#99001C;
             align-items: center;
             padding: 0 25px;
             color: white;
-            font-size: 13px;
-            font-family: $yugo;
+            font-family: ja-l;
             font-size: 13px;
             transition: 0.2s;
             width: 150px;
@@ -105,8 +166,7 @@ $rd:#99001C;
     &__link{
         display: block;
         padding: 15px;
-        font-family: $yugo;
-        font-weight: 400;
+        font-family: ja-r;
         font-size: 12px;
         color: #0e192d;
         position: relative;
@@ -202,24 +262,21 @@ $rd:#99001C;
     }
 
     &__en{
-        font-family: $en;
-        font-weight: 500;
+        font-family: en-r;
         font-size: 31px;
         color: $nv;
         margin-bottom: 5px;
     }
 
     &__ja{
-        font-family: $yugo;
-        font-weight: 700;
+        font-family: ja-b;
         font-size: 11px;
         color: $rd;
     }
 
     &__form{
         background: $rd;
-        font-family: $yugo;
-        font-weight: 500;
+        font-family: ja-r;
         font-size: 13px;
         color: white;
         margin: 0 auto;
@@ -255,10 +312,9 @@ $rd:#99001C;
 
 
 ////////////////////
-// トップ
+// トップ_FV
 //////////////////// 
 .top{
-    background-image: url("../img/01_top.jpg");
     background-size: cover;
     height: 700px;
 
@@ -278,8 +334,7 @@ $rd:#99001C;
 
     &__title{
         line-height: 1.5em;
-        font-family: $en;
-        font-weight: 700;
+        font-family: en-b;
         color: $nv;
         color: white;
         font-size: 60px;
@@ -287,12 +342,11 @@ $rd:#99001C;
     }
 
     &__subtitle{
-        font-family: $en;
+        font-family: en-b;
         color: $rd;
         margin-bottom: 20px;
         text-shadow: 0 0 5px rgba(255,255,255,1);
         font-size: 13px;
-        font-weight: 600;
     }
 }
 
@@ -317,7 +371,238 @@ $rd:#99001C;
 
 
 
+////////////////////
+// セクション_1
+//////////////////// 
+.section1{
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
 
+    &__content{
+        width: 50%;
+
+        &_right{
+            padding: 100px 0 80px 0;
+        }
+
+        &_left{
+            padding: 120px 0 80px 0;
+        }
+    }
+
+    &__sub{
+        font-family: en-b;
+        color: $rd;
+        font-size: 13px;
+        line-height: 17px;
+    }
+
+    &__title{
+        font-family: ja-b;
+        color: $nv;
+        font-size: 40px;
+        line-height: 52px;
+    }
+
+    &__text{
+        font-family: ja-r;
+        color: $nv;
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .section1{
+        &__wrapper{
+            display: block;
+        }
+    
+        &__content{
+            width: 100%;
+    
+            &_right{
+                padding: 50px 0;
+            }
+    
+            &_left{
+                padding: 0;
+            }
+        }
+    
+        &__sub{
+            font-size: 15px;
+            line-height: 20px;
+            margin-bottom: 5px;
+        }
+    
+        &__title{
+            font-size: 24px;
+            line-height: 31px;
+        }
+    }
+}
+
+
+
+////////////////////
+// セクション_2
+//////////////////// 
+.section2{
+    background: linear-gradient(to left, white 0px, white 50px, $bl 50px, $bl 100%);
+    margin-top: -42px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__content{
+        width: calc(25% - 30px);
+        background: white;
+        padding: 30px 0 15px 0;
+        text-align: center;
+        position: relative;
+        box-shadow: 2px 5px 10px rgba(0,0,0,0.2);
+
+        &::after{
+            content:"";
+            position: absolute;
+            top : 0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: #000;
+            background: linear-gradient(to bottom right, $gr 0%, $gr 50%, white 50%, white 100%);
+        }
+
+        &_1{
+            transform: translateY(30px);
+            &::before{
+                content: '';
+                position: absolute;
+                top:50%;
+                left:100%;
+                width:30px;
+                height:2px;
+                background: $nv;
+            }
+        }
+        &_2{
+            transform: translateY(10px);
+            &::before{
+                content: '';
+                position: absolute;
+                top:50%;
+                left:100%;
+                width:30px;
+                height:2px;
+                background: $nv;
+            }
+        }
+        &_3{
+            transform: translateY(-10px);
+            &::before{
+                content: '';
+                position: absolute;
+                top:50%;
+                left:100%;
+                width:30px;
+                height:2px;
+                background: $nv;
+            }
+        }
+        &_4{
+            transform: translateY(-30px);
+        }
+    }
+
+    &__title{
+        font-family: ja-b;
+        font-size: 16px;
+        color: $nv;
+        margin-bottom: 20px;
+    }
+
+    &__img{
+        width: 100%;
+        height: 20vh;
+        max-height: 200px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__text{
+        font-family: ja-l;
+        font-size: 12px;
+        line-height: 19px;
+        padding: 0 15px;
+    }
+
+
+}
+@media screen and (max-width:768px){
+    .section2{
+        background: $bl;
+        padding-top: 0;
+
+        &__wrapper{
+            flex-wrap: wrap;
+        }
+    
+        &__content{
+            width: calc(50% - 20px);
+            transform: translateY(30px);
+            padding: 15px 0 15px 0;
+            margin-bottom: 20px;
+    
+            &_1{
+                &::before{
+                    height:1px;
+                }
+            }
+            &_2{
+                &::before{
+                    top:106%;
+                    left: 0;
+                    height:1px;
+                    width: 50px;
+                    transform:translateX(-90%) rotate(-45deg);
+                }
+            }
+            &_3{
+                &::before{
+                    height:1px;
+                }
+            }
+        }
+    
+        &__title{
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+    
+        &__img{
+            height: 15vh;
+            max-height: 200px;
+            margin-bottom: 15px;
+        }
+    
+        &__text{
+            font-size: 10px;
+            line-height: 13px;
+            text-align: left;
+        }
+    
+    
+    }
+}
 
 
 

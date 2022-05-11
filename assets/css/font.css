@@ -1,4 +1,21 @@
 @font-face{
-    font-family: "";
-    src:url("../font");
+    font-family: "ja-b";
+    src:url("../font/NotoSansCJKjp-Medium.woff");
+}
+@font-face{
+    font-family: "ja-r";
+    src:url("../font/NotoSansCJKjp-Regular.woff");
+}
+@font-face{
+    font-family: "ja-l";
+    src:url("../font/NotoSansCJKjp-Light.woff");
+}
+
+@font-face{
+    font-family: "en-b";
+    src:url("../font/NotoSerifCJKjp-Bold.woff");
+}
+@font-face{
+    font-family: "en-r";
+    src:url("../font/NotoSerifCJKjp-Regular.woff");
 }
