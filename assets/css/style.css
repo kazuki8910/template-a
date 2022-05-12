@@ -86,8 +86,6 @@ body {
   position: relative;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  background: -webkit-gradient(linear, left top, right top, from(#0e192d), color-stop(0%, #0e192d), to(0%));
-  background: linear-gradient(to right, #0e192d 0%, #0e192d 0%, 0%);
 }
 
 .btn::after {
@@ -102,11 +100,6 @@ body {
           transform: translateX(50%) translateY(-50%);
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-.btn:hover {
-  background: -webkit-gradient(linear, left top, right top, from(#0e192d));
-  background: linear-gradient(to right, #0e192d 0%);
 }
 
 .header {

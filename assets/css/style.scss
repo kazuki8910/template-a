@@ -106,7 +106,6 @@ $bl:#F3F7FE;
     font-size: 12px;
     position: relative;
     transition: 0.2s;
-    background: linear-gradient(to right, $nv 0%, $nv 0%,  0%);
 
     &::after{
         content: "";
@@ -121,7 +120,6 @@ $bl:#F3F7FE;
     }
 
     &:hover{
-        background: linear-gradient(to right, $nv 0%);
     }
 }
 
