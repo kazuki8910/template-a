@@ -73,6 +73,42 @@ body {
   }
 }
 
+.btn {
+  margin: 30px auto;
+  display: block;
+  width: 280px;
+  border: 1px solid #000;
+  text-align: center;
+  padding: 20px 0;
+  font-family: ja-b;
+  color: #0e192d;
+  font-size: 12px;
+  position: relative;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  background: -webkit-gradient(linear, left top, right top, from(#0e192d), color-stop(0%, #0e192d), to(0%));
+  background: linear-gradient(to right, #0e192d 0%, #0e192d 0%, 0%);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 70px;
+  height: 1px;
+  background: #0e192d;
+  -webkit-transform: translateX(50%) translateY(-50%);
+          transform: translateX(50%) translateY(-50%);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#0e192d));
+  background: linear-gradient(to right, #0e192d 0%);
+}
+
 .header {
   background: white;
   position: fixed;

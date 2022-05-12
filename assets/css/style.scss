@@ -93,6 +93,38 @@ $bl:#F3F7FE;
     }
 }
 
+// ボタン
+.btn{
+    margin: 30px auto;
+    display: block;
+    width: 280px;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 20px 0;
+    font-family: ja-b;
+    color: $nv;
+    font-size: 12px;
+    position: relative;
+    transition: 0.2s;
+    background: linear-gradient(to right, $nv 0%, $nv 0%,  0%);
+
+    &::after{
+        content: "";
+        position: absolute;
+        top : 50%;
+        right: 10px;
+        width: 70px;
+        height: 1px;
+        background: $nv;
+        transform: translateX(50%) translateY(-50%);
+        transition: 0.2s;
+    }
+
+    &:hover{
+        background: linear-gradient(to right, $nv 0%);
+    }
+}
+
 
 
 /////////////////////
