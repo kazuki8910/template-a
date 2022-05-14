@@ -17,6 +17,8 @@ $rd:#99001C;
 $gr:#82cbd1;
 // 青
 $bl:#F3F7FE;
+// グレー
+$gr:#abb8c3;
 
 
 
@@ -81,13 +83,14 @@ $bl:#F3F7FE;
         }
     
         &__sub{
-            font-size: 12px;
+            font-size: 14px;
             margin-left: 30px;
+            width: 100%;
         }
     
         &__text{
             padding-left: 30px;
-            font-size: 11px;
+            font-size: 14px;
             line-height: 20px;
         }
     }
@@ -103,10 +106,29 @@ $bl:#F3F7FE;
     padding: 20px 0;
     font-family: ja-b;
     color: $nv;
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
     transition: 0.2s;
 
+    p{
+        position: relative;
+        z-index: 1;
+    }
+
+    // ホバーアニメーション
+    &::before{
+        content: '';
+        position: absolute;
+        top   : -1px;
+        left  : 0;
+        width : 0;
+        height: calc(100% + 1px);
+        background: $nv;
+        z-index: 0;
+        transition: 0.2s;
+    }
+
+    // 線
     &::after{
         content: "";
         position: absolute;
@@ -120,6 +142,60 @@ $bl:#F3F7FE;
     }
 
     &:hover{
+        color: white;
+
+        &::before{
+            width: calc(100% + 1px);
+        }
+
+        &::after{
+            background: white;
+            width: 30px;
+            right: 5px;
+            transform: translateX(0%) translateY(-50%);
+        }
+    }
+
+    // バリエーション
+    &_left{
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+@media screen and (max-width:768px){
+    .btn{
+        width: 240px;
+        padding: 15px 0;
+    }
+}
+
+// セクションの背景
+.section-background{
+    background: linear-gradient(to left, white 0px, white 50px, $bl 50px, $bl 100%);
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &_re{
+        background: linear-gradient(to right, white 0px, white 50px, $bl 50px, $bl 100%);
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+@media screen and (max-width:768px){
+    .section-background,.section-background_re{
+        background: $bl;
+        padding-top: 0;
+    }
+}
+
+
+
+/////////////////////
+// ヘルパー
+///////////////////// 
+.hp{
+    &_pdb0{
+        padding-bottom: 0px;
     }
 }
 
@@ -181,7 +257,7 @@ $bl:#F3F7FE;
             padding: 0 25px;
             color: white;
             font-family: ja-l;
-            font-size: 13px;
+            font-size: 14px;
             transition: 0.2s;
             width: 150px;
             justify-content: center;
@@ -197,7 +273,7 @@ $bl:#F3F7FE;
         display: block;
         padding: 15px;
         font-family: ja-r;
-        font-size: 12px;
+        font-size: 14px;
         color: #0e192d;
         position: relative;
         
@@ -300,14 +376,14 @@ $bl:#F3F7FE;
 
     &__ja{
         font-family: ja-b;
-        font-size: 11px;
+        font-size: 14px;
         color: $rd;
     }
 
     &__form{
         background: $rd;
         font-family: ja-r;
-        font-size: 13px;
+        font-size: 14px;
         color: white;
         margin: 0 auto;
         display: block;
@@ -376,7 +452,7 @@ $bl:#F3F7FE;
         color: $rd;
         margin-bottom: 20px;
         text-shadow: 0 0 5px rgba(255,255,255,1);
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
@@ -425,7 +501,7 @@ $bl:#F3F7FE;
     &__sub{
         font-family: en-b;
         color: $rd;
-        font-size: 13px;
+        font-size: 14px;
         line-height: 17px;
     }
 
@@ -454,7 +530,7 @@ $bl:#F3F7FE;
             width: 100%;
     
             &_right{
-                padding: 50px 0;
+                padding: 50px 0 15px 0;
             }
     
             &_left{
@@ -481,10 +557,6 @@ $bl:#F3F7FE;
 // セクション_2
 //////////////////// 
 .section2{
-    background: linear-gradient(to left, white 0px, white 50px, $bl 50px, $bl 100%);
-    margin-top: -42px;
-    padding-top: 30px;
-    padding-bottom: 30px;
 
     &__wrapper{
         display: flex;
@@ -570,7 +642,7 @@ $bl:#F3F7FE;
 
     &__text{
         font-family: ja-l;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 19px;
         padding: 0 15px;
     }
@@ -579,8 +651,6 @@ $bl:#F3F7FE;
 }
 @media screen and (max-width:768px){
     .section2{
-        background: $bl;
-        padding-top: 0;
 
         &__wrapper{
             flex-wrap: wrap;
@@ -614,7 +684,7 @@ $bl:#F3F7FE;
         }
     
         &__title{
-            font-size: 13px;
+            font-size: 14px;
             margin-bottom: 15px;
         }
     
@@ -625,8 +695,8 @@ $bl:#F3F7FE;
         }
     
         &__text{
-            font-size: 10px;
-            line-height: 13px;
+            font-size: 14px;
+            line-height: 14px;
             text-align: left;
         }
     
@@ -636,4 +706,178 @@ $bl:#F3F7FE;
 
 
 
+////////////////////
+// セクション_3
+//////////////////// 
+.section3{
 
+    &__content{
+        margin-bottom: 50px;
+
+        // 反対の配置のバリエーション
+        &_re{
+            .section3{
+                &__img{
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+                &__main{
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+    // 画像
+    &__img{
+        width: calc(100% - 15px);
+        max-width: 750px;
+        height: 400px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    // メイン
+    &__main{
+        margin: -300px 0 0 auto;
+        background: white;
+        min-height: 350px;
+        width: calc(100% - 30px);
+        max-width: 650px;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+        padding: 20px;
+    }
+    &__sub{
+        font-family: ja-b;
+        color: $nv;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 15px;
+    }
+    &__title{
+        font-family: ja-b;
+        color: $nv;
+        font-size: 56px;
+        margin-bottom: 15px;
+    }
+    &__text{
+        font-family: ja-l;
+        color: $nv;
+        font-size: 14px;
+        line-height: 28px;
+    }
+} 
+@media screen and (max-width:768px){
+    .section3{
+    
+        // 画像
+        &__img{
+            height: 200px;
+        }
+    
+        // メイン
+        &__main{
+            margin-top: -100px;
+            min-height: 0;
+            padding: 15px;
+        }
+        &__sub{
+            font-size: 14px;
+            line-height: 14px;
+            margin-bottom: 10px;
+        }
+        &__title{
+            margin-bottom: 10px;
+            font-size: 34px;
+        }
+        &__text{
+            line-height: 21px;
+        }
+    } 
+}
+
+
+
+////////////////////
+// セクション_4
+//////////////////// 
+.section4{
+    // 配置
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        max-width: 1030px;
+    }
+
+    // コンテンツ
+    &__item{
+        width: calc(33% - 15px);
+        background: white;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    }
+
+    // 画像
+    &__img{
+        width: 100%;
+        height: 150px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    // テキスト
+    &__main{
+        padding: 15px;
+    }
+    &__title{
+        color: $rd;
+        font-family: ja-b;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    &__text{
+        color: $nv;
+        font-family: ja-r;
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 21px;
+        min-height: 150px;
+    }
+    &__company{
+        color: $gr;
+        font-family: ja-r;
+        font-size: 14px;
+        text-align: right;
+    }
+}
+@media screen and (max-width:768px){
+    .section4{
+        // 配置
+        &__wrapper{
+            flex-wrap: wrap;
+        }
+    
+        // コンテンツ
+        &__item{
+            width: calc(50% - 10px);
+            margin-bottom: 20px;
+        }
+    
+        // 画像
+        &__img{
+            width: 100%;
+            height: 100px;
+        }
+    
+        // テキスト
+        &__main{
+            padding: 10px;
+        }
+        &__title{
+            margin-bottom: 10px;
+        }
+        &__text{
+            min-height: 0px;
+        }
+    }
+}
